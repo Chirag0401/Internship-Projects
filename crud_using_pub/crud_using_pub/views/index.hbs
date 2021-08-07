@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container-fluid">
+    <h4>user list</h4>
+    {{#if serverSuccess}}
+    <div class="alert alert-success">{{serverSuccess}}</div>
+    {{/if}}
+    {{#if serverError}}
+    <div class="alert alert-danger">{{serverError}}</div>
+    {{/if}}
+    <a href="/create" ><button class="btn btn-primary mb-3">Create New User</button></a>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {{#each userList}}
+          <tr>
+            <th scope="row">{{this.first_name}}</th>
+            <td>{{this.last_name}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.email}}</td>
+            <td>
+              <a href="/edit/{{this.id}}"><button class="btn btn-primary">Edit</button></a>
+              <a href="/delete/{{this.id}}"><button class="btn btn-danger">Delete</button></a>
+    
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>

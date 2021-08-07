@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-fluid">
+      {{#if serverError}}
+      <div class="alert alert-success">{{serverError}}</div>
+      {{/if}}
+    <div style="align-content: center; height: 50% ; width: 50%;">
+    <form action="create" method="POST">
+        <div class="form-group">
+          <label for=firstname>First Name</label>
+          <input type="text" name="first_name" class="form-control" id="firstname">
+        </div>
+        <div class="form-group">
+            <label for=lastname>Last Name</label>
+            <input type="text" name="last_name" class="form-control" id="lastname">
+          </div>  
+          <div class="form-group">
+            <label for=mobile>mobile</label>
+            <input type="number" name="mobile" class="form-control" id="mobile">
+          </div>          
+          <div class="form-group">
+            <label for=email>Email</label>
+            <input type="email" name="email" class="form-control" id="email">
+          </div>     
+             <button type="submit" class="btn btn-primary">Create User</button>
+      </form>
+    </div>
+</div>
+    </body>
+</html>
